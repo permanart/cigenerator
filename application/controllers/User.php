@@ -63,7 +63,7 @@ class User extends CI_Controller
     public function create_action() 
     {
         $this->_rules();
-
+        $foto = $this->upload_foto();
         if ($this->form_validation->run() == FALSE) {
             $this->create();
         } else {
@@ -71,7 +71,7 @@ class User extends CI_Controller
 		'full_name' => $this->input->post('full_name',TRUE),
 		'email' => $this->input->post('email',TRUE),
 		'password' => md5($this->input->post('password',TRUE)),
-		'images' => $this->input->post('images',TRUE),
+		'images' => $foto['file_name'],
 		'id_user_level' => $this->input->post('id_user_level',TRUE),
 		'is_aktif' => $this->input->post('is_aktif',TRUE),
 	    );
@@ -108,23 +108,44 @@ class User extends CI_Controller
     public function update_action() 
     {
         $this->_rules();
-
+        $foto = $this->upload_foto();
         if ($this->form_validation->run() == FALSE) {
             $this->update($this->input->post('id_users', TRUE));
         } else {
-            $data = array(
+            if($foto['file_name']==''){
+                $data = array(
 		'full_name' => $this->input->post('full_name',TRUE),
 		'email' => $this->input->post('email',TRUE),
-		'password' => $this->input->post('password',TRUE),
-		'images' => $this->input->post('images',TRUE),
+		//'password' => $this->input->post('password',TRUE),
+                //'images'=>$foto['file_name'],
 		'id_user_level' => $this->input->post('id_user_level',TRUE),
-		'is_aktif' => $this->input->post('is_aktif',TRUE),
-	    );
+		'is_aktif' => $this->input->post('is_aktif',TRUE));
+            }else{
+                $data = array(
+		'full_name' => $this->input->post('full_name',TRUE),
+		'email' => $this->input->post('email',TRUE),
+		//'password' => $this->input->post('password',TRUE),
+                'images'=>$foto['file_name'],
+		'id_user_level' => $this->input->post('id_user_level',TRUE),
+		'is_aktif' => $this->input->post('is_aktif',TRUE));
+            }
 
             $this->User_model->update($this->input->post('id_users', TRUE), $data);
             $this->session->set_flashdata('message', 'Update Record Success');
             redirect(site_url('user'));
         }
+    }
+    
+    
+    function upload_foto(){
+        $config['upload_path']          = './assets/foto_profil';
+        $config['allowed_types']        = 'gif|jpg|png';
+        //$config['max_size']             = 100;
+        //$config['max_width']            = 1024;
+        //$config['max_height']           = 768;
+        $this->load->library('upload', $config);
+        $this->upload->do_upload('images');
+        return $this->upload->data();
     }
     
     public function delete($id) 
@@ -145,8 +166,8 @@ class User extends CI_Controller
     {
 	$this->form_validation->set_rules('full_name', 'full name', 'trim|required');
 	$this->form_validation->set_rules('email', 'email', 'trim|required');
-	$this->form_validation->set_rules('password', 'password', 'trim|required');
-	$this->form_validation->set_rules('images', 'images', 'trim|required');
+	//$this->form_validation->set_rules('password', 'password', 'trim|required');
+	//$this->form_validation->set_rules('images', 'images', 'trim|required');
 	$this->form_validation->set_rules('id_user_level', 'id user level', 'trim|required');
 	$this->form_validation->set_rules('is_aktif', 'is aktif', 'trim|required');
 
