@@ -14,7 +14,7 @@ function cmb_dinamis($name,$table,$field,$pk,$selected){
 
 function datalist_dinamis($name,$table,$field,$value){
     $ci = get_instance();
-    $string = '<input name="'.$name.'" list="'.$name.'" class="form-control">
+    $string = '<input value="'.$value.'" name="'.$name.'" list="'.$name.'" class="form-control">
     <datalist id="'.$name.'">';
     $data = $ci->db->get($table)->result();
     foreach ($data as $row){
