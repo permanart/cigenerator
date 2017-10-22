@@ -16,6 +16,6 @@ Password : password
 
 # DROPDOWN DINAMIS
 Fungsi ini digunaan untuk membuat dropdown dinamis dengan data yang berasal dari database, cara penggunaan :<br>
-'''php <?php echo cmb_dinamis(NamaElement,NamaTabel,NamaField,PrimaryKey,DefaultValue);?>'''<br>
+```php <?php echo cmb_dinamis(NamaElement,NamaTabel,NamaField,PrimaryKey,DefaultValue);?>```<br>
 Contoh : <br>
-'''php <?php echo datalist_dinamis(NamaElement,NamaTable,NamaField) ?>'''
+```php <?php echo datalist_dinamis(NamaElement,NamaTable,NamaField) ?>```
