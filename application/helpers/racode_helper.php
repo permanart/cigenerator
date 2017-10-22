@@ -12,6 +12,18 @@ function cmb_dinamis($name,$table,$field,$pk,$selected){
     return $cmb;  
 }
 
+function datalist_dinamis($name,$table,$field,$value){
+    $ci = get_instance();
+    $string = '<input name="'.$name.'" list="'.$name.'" class="form-control">
+    <datalist id="'.$name.'">';
+    $data = $ci->db->get($table)->result();
+    foreach ($data as $row){
+        $string.='<option value="'.$row->$field.'">';
+    }
+    $string .='</datalist>';
+    return $string;
+}
+
 function rename_string_is_aktif($string){
         return $string=='y'?'Aktif':'Tidak Aktif';
     }

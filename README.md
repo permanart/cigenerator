@@ -12,3 +12,10 @@ CRUD Generator Yang Saya Gunakan Adalah Harviacode Yang Sudah Dimodifikasi Agar 
 Untuk melakukan proses login silahkan gunakan akun default berikut :<br>
 Email : admin@gmail.com<br>
 Password : password
+
+
+# DROPDOWN DINAMIS
+Fungsi ini digunaan untuk membuat dropdown dinamis dengan data yang berasal dari database, cara penggunaan :<br>
+<?php echo cmb_dinamis(NamaElement,NamaTabel,NamaField,PrimaryKey,DefaultValue);?><br>
+Contoh : <br>
+<?php echo datalist_dinamis(NamaElement,NamaTable,NamaField) ?>

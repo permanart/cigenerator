@@ -8,9 +8,11 @@
             <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
 
                 <table class='table table-bordered>'        
-
+                       
                        <tr><td width='200'>Nama Lengkap <?php echo form_error('full_name') ?></td><td><input type="text" class="form-control" name="full_name" id="full_name" placeholder="Full Name" value="<?php echo $full_name; ?>" /></td></tr>
-                    <tr><td width='200'>Email <?php echo form_error('email') ?></td><td><input type="text" class="form-control" name="email" id="email" placeholder="Email" value="<?php echo $email; ?>" /></td></tr>
+                    <tr><td width='200'>Email <?php echo form_error('email') ?></td><td>
+                            
+                            <input type="text" class="form-control" name="email" id="email" placeholder="Email" value="<?php echo $email; ?>" /></td></tr>
                     
                     <?php
                     if($this->uri->segment(2)=='create'){
@@ -20,6 +22,7 @@
                     <?php
                     }
                     ?>
+                    <tr><td>sdsd</td><td><?php echo datalist_dinamis('tbl_user', 'tbl_user', 'full_name', 'ds')?></td></tr>
 
                     <tr><td width='200'>Level User <?php echo form_error('id_user_level') ?></td><td>
                             <?php echo cmb_dinamis('id_user_level', 'tbl_user_level', 'nama_level', 'id_user_level', $id_user_level) ?>
