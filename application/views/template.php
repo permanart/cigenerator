@@ -11,6 +11,7 @@
         <!-- Font Awesome -->
         <link rel="stylesheet" href="<?php echo base_url() ?>assets/adminlte/bower_components/font-awesome/css/font-awesome.min.css">
         <!-- Ionicons -->
+        <link rel="stylesheet" href="<?php echo base_url() ?>assets/adminlte/bower_components/select2/dist/css/select2.min.css">
         <link rel="stylesheet" href="<?php echo base_url() ?>assets/adminlte/bower_components/Ionicons/css/ionicons.min.css">
         <!-- DataTables -->
         <link rel="stylesheet" href="<?php echo base_url() ?>assets/adminlte/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
@@ -54,13 +55,13 @@
 
                     <div class="navbar-custom-menu">
                         <ul class="nav navbar-nav">                          
-                          
+
 
                             <!-- User Account: style can be found in dropdown.less -->
                             <li class="dropdown user user-menu">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     <img src="<?php echo base_url() ?>assets/adminlte/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                                    <span class="hidden-xs"><?php echo $this->session->userdata('full_name');  ?> </span>
+                                    <span class="hidden-xs"><?php echo $this->session->userdata('full_name'); ?> </span>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <!-- User image -->
@@ -68,18 +69,18 @@
                                         <img src="<?php echo base_url() ?>assets/adminlte/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                                         <p>
-                                            <?php echo $this->session->userdata('full_name');  ?>                                         
+                                            <?php echo $this->session->userdata('full_name'); ?>                                         
                                             <small>Member since Nov. 2012</small>
                                         </p>
                                     </li>
                                     <!-- Menu Footer-->
                                     <li class="user-footer">
                                         <div class="pull-left">
-                                            <?php echo anchor('user/profile','Profile',array('class'=>'btn btn-default btn-flat'));?>
+                                            <?php echo anchor('user/profile', 'Profile', array('class' => 'btn btn-default btn-flat')); ?>
                                             <!--<a href="#" class="btn btn-default btn-flat">Profile</a>-->
                                         </div>
                                         <div class="pull-right">
-                                            <?php echo anchor('auth/logout','Logout',array('class'=>'btn btn-default btn-flat'));?>
+                                            <?php echo anchor('auth/logout', 'Logout', array('class' => 'btn btn-default btn-flat')); ?>
                                             <!--<a href="#" class="btn btn-default btn-flat">Sign out</a>-->
                                         </div>
                                     </li>
@@ -96,7 +97,7 @@
             <!-- Left side column. contains the logo and sidebar -->
             <aside class="main-sidebar">
                 <!-- sidebar: style can be found in sidebar.less -->
-                <?php $this->load->view('template/sidebar');?>
+                <?php $this->load->view('template/sidebar'); ?>
             </aside>
 
             <?php
@@ -324,9 +325,12 @@
         <script src="<?php echo base_url() ?>assets/adminlte/dist/js/adminlte.min.js"></script>
         <!-- AdminLTE for demo purposes -->
         <script src="<?php echo base_url() ?>assets/adminlte/dist/js/demo.js"></script>
+        <!-- Select2 -->
+        <script src="<?php echo base_url() ?>assets/adminlte/bower_components/select2/dist/js/select2.full.min.js"></script>
         <!-- page script -->
         <script>
             $(function () {
+                 $('.select2').select2()
                 $('#example1').DataTable()
                 $('#example2').DataTable({
                     'paging'      : true,

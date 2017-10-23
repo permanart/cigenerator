@@ -12,6 +12,18 @@ function cmb_dinamis($name,$table,$field,$pk,$selected){
     return $cmb;  
 }
 
+function select2_dinamis($name,$table,$field,$placeholder){
+    $ci = get_instance();
+    $select2 = '<select name="'.$name.'" class="form-control select2 select2-hidden-accessible" multiple="" 
+               data-placeholder="'.$placeholder.'" style="width: 100%;" tabindex="-1" aria-hidden="true">';
+    $data = $ci->db->get($table)->result();
+    foreach ($data as $row){
+        $select2.= ' <option>'.$row->$field.'</option>';
+    }
+    $select2 .='</select>';
+    return $select2;
+}
+
 function datalist_dinamis($name,$table,$field,$value){
     $ci = get_instance();
     $string = '<input value="'.$value.'" name="'.$name.'" list="'.$name.'" class="form-control">

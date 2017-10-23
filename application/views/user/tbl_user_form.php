@@ -22,7 +22,7 @@
                     <?php
                     }
                     ?>
-                    <tr><td>sdsd</td><td><?php echo datalist_dinamis('tbl_user', 'tbl_user', 'full_name', 'ds')?></td></tr>
+                    <tr><td>Select2</td><td><?php echo select2_dinamis('daftar_obat', 'tbl_user', 'full_name', 'testing')?></td></tr>
 
                     <tr><td width='200'>Level User <?php echo form_error('id_user_level') ?></td><td>
                             <?php echo cmb_dinamis('id_user_level', 'tbl_user_level', 'nama_level', 'id_user_level', $id_user_level) ?>
