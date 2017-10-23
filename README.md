@@ -25,3 +25,9 @@ Fungsi ini digunaan untuk membuat datalist dinamis dengan data yang berasal dari
 ``` <?php echo datalist_dinamis(NamaElement,NamaTabel,NamaField,DefaultValue);?>```<br>
 Contoh : <br>
 ``` <?php echo datalist_dinamis('ListUser','tbl_users','nama_lengkap') ?>```
+
+# SELECT2 DINAMIS
+Fungsi ini digunaan untuk membuat select2 dinamis dengan data yang berasal dari database, cara penggunaan :<br>
+``` <?php echo datalist_dinamis(NamaElement,NamaTabel,NamaField,PlaceHolder);?>```<br>
+Contoh : <br>
+``` <?php echo datalist_dinamis('ListUser','tbl_users','nama_lengkap','Masukan Nama Users') ?>```
