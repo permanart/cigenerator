@@ -116,18 +116,18 @@ class User extends CI_Controller
                 $data = array(
 		'full_name' => $this->input->post('full_name',TRUE),
 		'email' => $this->input->post('email',TRUE),
-		//'password' => $this->input->post('password',TRUE),
-                //'images'=>$foto['file_name'],
 		'id_user_level' => $this->input->post('id_user_level',TRUE),
 		'is_aktif' => $this->input->post('is_aktif',TRUE));
             }else{
                 $data = array(
 		'full_name' => $this->input->post('full_name',TRUE),
 		'email' => $this->input->post('email',TRUE),
-		//'password' => $this->input->post('password',TRUE),
                 'images'=>$foto['file_name'],
 		'id_user_level' => $this->input->post('id_user_level',TRUE),
 		'is_aktif' => $this->input->post('is_aktif',TRUE));
+                
+                // ubah foto profil yang aktif
+                $this->session->set_userdata('images',$foto['file_name']);
             }
 
             $this->User_model->update($this->input->post('id_users', TRUE), $data);

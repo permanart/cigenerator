@@ -28,6 +28,6 @@ Contoh : <br>
 
 # SELECT2 DINAMIS
 Fungsi ini digunaan untuk membuat select2 dinamis dengan data yang berasal dari database, cara penggunaan :<br>
-``` <?php echo datalist_dinamis(NamaElement,NamaTabel,NamaField,PlaceHolder);?>```<br>
+``` <?php echo select2_dinamis(NamaElement,NamaTabel,NamaField,PlaceHolder);?>```<br>
 Contoh : <br>
 ``` <?php echo select2_dinamis('ListUser','tbl_users','nama_lengkap','Masukan Nama Users') ?>```
