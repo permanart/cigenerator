@@ -1,5 +1,5 @@
 <?php
-function cmb_dinamis($name,$table,$field,$pk,$selected){
+function cmb_dinamis($name,$table,$field,$pk,$selected=null){
     $ci = get_instance();
     $cmb = "<select name='$name' class='form-control'>";
     $data = $ci->db->get($table)->result();
@@ -24,7 +24,7 @@ function select2_dinamis($name,$table,$field,$placeholder){
     return $select2;
 }
 
-function datalist_dinamis($name,$table,$field,$value){
+function datalist_dinamis($name,$table,$field,$value=null){
     $ci = get_instance();
     $string = '<input value="'.$value.'" name="'.$name.'" list="'.$name.'" class="form-control">
     <datalist id="'.$name.'">';

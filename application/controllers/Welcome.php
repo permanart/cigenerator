@@ -29,4 +29,15 @@ class Welcome extends CI_Controller {
 		//$this->load->view('table');
                 $this->template->load('template','form');
 	}
+        
+        function test(){
+            $this->db->like('nama_lengkap',$_GET['term']);
+            $this->db->select('nama_lengkap');
+            $products = $this->db->get('pegawai')->result();
+            foreach($products as $product){
+                 $return_arr[] =  $product->nama_lengkap;
+            }
+
+            echo json_encode($return_arr);
+        }
 }
