@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -31,44 +30,53 @@
     <body class="hold-transition login-page">
         <div class="login-box">
             <div class="login-logo">
-                <a href="<?php echo base_url(); ?>/adminlte/index2.html"><b>Admin</b>LTE</a>
+                <a href="<?php echo base_url(); ?>/adminlte/index2.html"><b>Codeigniter CRUD</b> Generator</a>
             </div>
             <!-- /.login-logo -->
             <div class="login-box-body">
                 <?php
                 $status_login = $this->session->userdata('status_login');
-                if(empty($status_login)){
+                if (empty($status_login)) {
                     $message = "Silahkan login untuk masuk ke aplikasi";
-                }else{
+                } else {
                     $message = $status_login;
                 }
                 ?>
-                <p class="login-box-msg"><?php echo $message;?></p>
+                <p class="login-box-msg"><?php echo $message; ?></p>
 
                 <!--<form action="<?php echo base_url(); ?>/adminlte/index2.html" method="post">-->
-                <?php echo form_open('auth/cheklogin');?>
-                    <div class="form-group has-feedback">
-                        <input type="email" class="form-control" name="email" placeholder="Email">
-                        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                <?php echo form_open('auth/cheklogin'); ?>
+                <div class="form-group has-feedback">
+                    <input type="email" class="form-control" name="email" placeholder="Email">
+                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    <input type="password" class="form-control" name="password" placeholder="Password">
+                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                </div>
+                <div class="row">
+                    <div class="col-xs-4">
+                        <button type="submit" class="btn btn-danger btn-block btn-flat"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</button>
                     </div>
-                    <div class="form-group has-feedback">
-                        <input type="password" class="form-control" name="password" placeholder="Password">
-                        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                    <div class="col-xs-6">
+                        <?php echo anchor('#', '<i class="fa fa-eye-slash" aria-hidden="true"></i> Lupa Password', array('class' => 'btn btn-primary btn-block btn-flat')); ?>
                     </div>
-                    <div class="row">
-                        <div class="col-xs-8">
-                            <div class="checkbox icheck">
-                                <label>
-                                    <input type="checkbox"> Remember Me
-                                </label>
-                            </div>
+                </div>
+                <!-- /.col -->
+
+
+                <!-- /.col -->
+                <div class="row" style="margin-top: 20px;">
+                    <div class="col-xs-12">
+                        <div class="callout callout-info">
+                            <h4>Default Login</h4>
+
+                            <p><b>Email</b> : admin@gmail.com</p>
+                            <p><b>Password</b> : password</p>
                         </div>
-                        <!-- /.col -->
-                        <div class="col-xs-4">
-                            <button type="submit" class="btn btn-primary btn-block btn-flat">Login</button>
-                        </div>
-                        <!-- /.col -->
                     </div>
+
+                </div>
                 </form>
 
 
