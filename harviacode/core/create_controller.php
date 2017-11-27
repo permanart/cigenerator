@@ -40,7 +40,8 @@ $string .= "\n\n    public function index()
         \$config['page_query_string'] = TRUE;
         \$config['total_rows'] = \$this->" . $m . "->total_rows(\$q);
         \$$c_url = \$this->" . $m . "->get_limit_data(\$config['per_page'], \$start, \$q);
-
+        \$config['full_tag_open'] = '<ul class=\"pagination pagination-sm no-margin pull-right\">';
+        \$config['full_tag_close'] = '</ul>';
         \$this->load->library('pagination');
         \$this->pagination->initialize(\$config);
 
@@ -107,10 +108,11 @@ $string .= "\n\t);
 foreach ($non_pk as $row) {
     $string .= "\n\t\t'" . $row['column_name'] . "' => \$this->input->post('" . $row['column_name'] . "',TRUE),";
 }
+//$oke = alert('alert-info', 'Selamat', 'Data Berhasil Diperbaharui');
 $string .= "\n\t    );
 
             \$this->".$m."->insert(\$data);
-            \$this->session->set_flashdata('message', 'Create Record Success');
+            \$this->session->set_flashdata('message', 'Create Record Success 2');
             redirect(site_url('$c_url'));
         }
     }

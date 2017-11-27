@@ -1,5 +1,6 @@
 <div class="content-wrapper">
     <section class="content">
+        <?php echo alert('alert-info', 'Selamat', 'Data Berhasil Diperbaharui')?>
         <div class="row">
             <div class="col-xs-12">
                 <div class="box box-warning box-solid">
@@ -30,7 +31,7 @@
     $(function() {
         //autocomplete
         $("#product").autocomplete({
-            source: "http://localhost/cigenerator/index.php/welcome/test",
+            source: "http://localhost/cigenerator/index.php/welcome/autocomplate",
             minLength: 1
         });				
     });

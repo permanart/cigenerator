@@ -1,5 +1,4 @@
 <section class="sidebar">
-
     <!-- search form -->
     <form action="#" method="get" class="sidebar-form">
         <div class="input-group">
