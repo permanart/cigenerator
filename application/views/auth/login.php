@@ -71,7 +71,7 @@
                         <div class="callout callout-info">
                             <h4>Default Login</h4>
 
-                            <p><b>Email</b> : admin@gmail.com</p>
+                            <p><b>Email</b> : nuris.akbar@gmail.com</p>
                             <p><b>Password</b> : password</p>
                         </div>
                     </div>
